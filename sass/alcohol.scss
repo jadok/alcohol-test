@@ -1,0 +1,15 @@
+.alcohols {
+  background-color: darkslategray;
+  padding-top: .3em;
+  padding-bottom: .3em;
+}
+
+.alcohol {
+    display: flex;
+    justify-content: space-around;
+    padding: 1em;
+    background-color: #551111;
+    border-radius: 1em;
+    margin: 1em;
+    transition: .2s all;
+}

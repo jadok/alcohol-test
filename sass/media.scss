@@ -1,0 +1,100 @@
+/**
+ * Medias
+ *
+ * media-breakpoint-up
+ *
+ // Extra small devices (portrait phones, less than 544px)
+ // No media query since this is the default in Bootstrap
+ // Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) 
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+ *
+ * media-breakpoint-down
+ *
+// Extra small devices (portrait phones, less than 544px)
+@media (max-width: 543px) { ... }
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767px) { ... }
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991px) { ... }
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199px) { ... }
+
+// Extra large devices (large desktops)
+// No media query since the extra-large breakpoint has no upper bound on its width
+ *
+ * media-breakpoint-only
+ *
+@include media-breakpoint-only(xs) { ... }
+@include media-breakpoint-only(sm) { ... }
+@include media-breakpoint-only(md) { ... }
+@include media-breakpoint-only(lg) { ... }
+@include media-breakpoint-only(xl) { ... }
+ */
+
+$mobile-width: 544px;
+$tablet-width: 768px;
+$tablet-large-width: 992px;
+$desktop-width: 1200px;
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-mobile {
+  @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$tablet-large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin large-tablet {
+  @media (min-width: #{$tablet-large-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+/**
+ * max definition
+ */
+@mixin max-large-mobile {
+  @media (max-width: #{$tablet-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin max-tablet {
+  @media (max-width: #{$tablet-large-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin max-large-tablet {
+  @media (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
