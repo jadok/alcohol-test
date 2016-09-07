@@ -16,5 +16,8 @@ input {
 }
 
 @include max-tablet {
-  width: 95%;
+  .contain {
+    width: 95%;
+  }
+  
 }

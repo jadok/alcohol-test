@@ -7,9 +7,27 @@
 .alcohol {
     display: flex;
     justify-content: space-around;
+    flex-direction: row;
     padding: 1em;
     background-color: #551111;
     border-radius: 1em;
     margin: 1em;
     transition: .2s all;
+}
+.add-alco {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.degree,
+.quantity {
+  display: flex;
+  justify-content: space-around;
+}
+@include max-tablet {
+  .alcohol {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

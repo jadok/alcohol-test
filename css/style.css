@@ -5786,7 +5786,8 @@ input {
   color: black; }
 
 @media (max-width: 991px) {
-  width: 95%; }
+  .contain {
+    width: 95%; } }
 .gender {
   display: -ms-flexbox;
   display: flex;
@@ -5815,12 +5816,34 @@ input {
   display: flex;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-direction: row;
+      flex-direction: row;
   padding: 1em;
   background-color: #551111;
   border-radius: 1em;
   margin: 1em;
   transition: .2s all; }
-  .alcohol input {
-    color: black; }
+
+.add-alco {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+
+.degree,
+.quantity {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+@media (max-width: 991px) {
+  .alcohol {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: center;
+        justify-content: center; } }
 
 /*# sourceMappingURL=style.css.map */

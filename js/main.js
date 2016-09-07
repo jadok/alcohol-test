@@ -10,7 +10,7 @@ function countAlcohol()
 
 function addAlcohol() {
   var degree = $('<div class="degree"></div>');
-  degree.append('<span class="name">Degree:</span>');
+  degree.append('<span class="name">Degree(°):</span>');
   var input_d = $('<input type="number" name="degree" value=0 />');
   input_d.on('keyup', function (e) {
     console.log('degree', countAlcohol());
@@ -19,7 +19,7 @@ function addAlcohol() {
   degree.append(input_d);
 
   var quantity = $('<div class="quantity"></div>');
-  quantity.append('<span class="name">Quantity:</span>');
+  quantity.append('<span class="name">Quantity (cL):</span>');
   var q_input = $('<input type="number" name="quantity" value=0 />');
   q_input.on ('keyup', function (e) {
     console.log('quantity', countAlcohol());
@@ -29,7 +29,7 @@ function addAlcohol() {
 
   var remove_alcohol = $('<input id="remove-' + countAlcohol() + '" type="button" value="-" />');
   remove_alcohol.click(function(i, e) {
-    $('.alcohol.added-'+countAlcohol()).remove();
+    $(e).parent().remove();
     fillAlcohol();
   });
 
