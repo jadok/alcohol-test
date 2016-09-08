@@ -1,0 +1,46 @@
+/**
+ *
+ * Exemple: main -> blue, secondary -> dark blue
+ */
+@mixin make-btn($main_color, $secondary_color, $third_color, $fourth_color) {
+  background-color: $main_color;
+  color: $secondary_color;
+  border: 1px solid $main_color;
+  transition: .3s ease;
+  /**
+   * a normal, unvisited link
+   * choice: Prefer to just ignore the css state
+   */
+  //&:link { 
+
+  //}
+  /**
+   * a link the user has visited
+   *  
+   */
+  &:visited {
+    background-color: $fourth_color;
+    color: $secondary_color;
+    border: 1px solid $fourth_color;
+  }
+  /**
+   * a link when the user mouses over it
+   * Dont forget the transition effect for css event
+   */
+  &:hover {
+    background-color: $secondary_color;
+    color: $main_color;
+    border: 1px solid $secondary_color;
+    transition: .3s ease;
+  }
+  /**
+   * a link the moment it is clicked
+   * Dont forget the transition effect for css event
+   */
+  &:active {
+    background-color: $third_color;
+    color: $secondary_color;
+    border: 1px solid $third_color;
+    transition: .3s ease;
+  }
+}

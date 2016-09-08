@@ -1,8 +1,16 @@
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
 
+$main_color:#551111;
+$second_color: #F2BB00;
+$third_color:#AA2222;
+$fourth_color: white;
+$drunk:#d00000;
 //custom
 @import 'media.scss';
+@import 'button.scss';
+
 @import 'common.scss';
+@import 'main.scss';
 @import 'gender.scss';
 @import 'weight.scss';
 @import 'alcohol.scss';

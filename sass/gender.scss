@@ -1,8 +1,10 @@
 .gender {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: .5em 0;
 }
+
 .gender-woman,
 .gender-man {
   margin: .2em 1em;

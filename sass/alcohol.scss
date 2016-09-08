@@ -1,23 +1,28 @@
 .alcohols {
-  background-color: darkslategray;
-  padding-top: .3em;
   padding-bottom: .3em;
 }
 
 .alcohol {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
-    padding: 1em;
-    background-color: #551111;
-    border-radius: 1em;
-    margin: 1em;
-    transition: .2s all;
-}
-.add-alco {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 1em;
+  background-color: #551111;
+  margin: 1em 0;
+  transition: .2s all;
+}
+
+.alco-control {
+  display: flex;
+  justify-content: space-between;
   align-content: center;
+  margin: .5em 0;
+}
+
+.add-alco {
+  input {
+    @include make-btn($main_color, $second_color, $third_color, $fourth_color);
+  }
 }
 
 .degree,
