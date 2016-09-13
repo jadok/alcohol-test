@@ -1,4 +1,9 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-compass.scss';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-mincer.scss';
+@import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap-sprockets.scss';
 @import '../node_modules/bootstrap-sass/assets/stylesheets/_bootstrap.scss';
+
 
 $main_color:#551111;
 $second_color: #F2BB00;

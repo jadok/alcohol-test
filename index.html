@@ -9,25 +9,29 @@
     <div class="contain">
       <div class="person">
         <div class="gender">
-          <div class="gender-man">
-            <input type="radio" name="sex" value="0" checked="true"/><span>Man</span>
-          </div>
-          <div class="gender-woman">
-            <input type="radio" name="sex" value="1" /><span>Women</span>
-          </div>
+            <select>
+              <option value="Man" selected>Man</option>
+              <option value="Woman">Woman</option>
+            </select>
         </div>
         <div class="weight">
           <span class="name">Weight(kg):</span><input id="weight" type="number" name="weight" value="65"/>
         </div>
       </div>
-      <div class="add-alco">
-        <input type="button" name="add" value="More drinks.." onclick="addAlcohol();" />
+      <div class="alco-control">
+        <div class="alco-limit">
+          <span class="name">Limit(g/L):</span>
+          <input type="number" name="limit" value="0.5"/>
+        </div>
+        <div class="add-alco">
+          <input type="button" name="add" value="More drinks.." onclick="addAlcohol();" />
+        </div>
       </div>
       <div class="alcohols">
       </div>
       <div class="total">
-        <span class="name">Total:</span>
-        <input type="number" name="total" value="0" id="total_alcohol" />
+        <span class="name">Total(g/L):</span>
+        <span id="total_alcohol">0</span>
       </div>
     </div>
 

@@ -11,7 +11,7 @@ function countAlcohol()
 function addAlcohol() {
   var degree = $('<div class="degree"></div>');
   degree.append('<span class="name">Degree(°):</span>');
-  var input_d = $('<input type="number" name="degree" value=0 />');
+  var input_d = $('<input type="number" name="degree" value="" />');
   input_d.on('keyup', function (e) {
     console.log('degree', countAlcohol());
     fillAlcohol();
@@ -20,16 +20,16 @@ function addAlcohol() {
 
   var quantity = $('<div class="quantity"></div>');
   quantity.append('<span class="name">Quantity (cL):</span>');
-  var q_input = $('<input type="number" name="quantity" value=0 />');
-  q_input.on ('keyup', function (e) {
+  var q_input = $('<input type="number" name="quantity" value="" />');
+  q_input.on ('keyup', function () {
     console.log('quantity', countAlcohol());
     fillAlcohol();
   });
   quantity.append(q_input);
 
-  var remove_alcohol = $('<input id="remove-' + countAlcohol() + '" type="button" value="-" />');
-  remove_alcohol.click(function(i, e) {
-    $(e).parent().remove();
+  var remove_alcohol = $('<span id="remove-' + countAlcohol() + '">X</span>');
+  remove_alcohol.click(function() {
+    $(this).parent().remove();
     fillAlcohol();
   });
 
@@ -45,14 +45,17 @@ function fillAlcohol() {
   alco= [];
   $.each($('.alcohols > div'), function (i, e) {
     var tmp = {};
-    tmp.q = parseFloat($(e).find('input[name="quantity"]').val());
-    tmp.d = parseFloat($(e).find('input[name="degree"]').val());
-    alco.push(tmp);
+    tmp.q = ($(e).find('input[name="quantity"]').val());
+    tmp.d = ($(e).find('input[name="degree"]').val());
+    if (tmp.q !== "" && tmp.d !== "")
+      alco.push(tmp);
   });
-  $('#total_alcohol').val(alcohol());
+  $('#total_alcohol').text(Math.round(alcohol() * 100) / 100);
+  limitAlco();
 }
 
 function alcohol() {
+  gender_id = $('select option:selected');
   var coef_g = gender_coef[gender_id];
   var conso = 0;
   $.each(alco, function (i, e) {
@@ -61,8 +64,15 @@ function alcohol() {
   return (conso * 0.8 / (coef_g * weight));
 }
 
+function limitAlco() {
+  if (parseFloat($('input[name="limit"]').val()) < parseFloat($('#total_alcohol').text())) {
+    $('#total_alcohol').addClass('drunked');
+  }
+  else {
+    $('#total_alcohol').removeClass('drunked');
+  }
+}
 $(document).ready(function ($) {
   $('#weight').val(weight);
-  gender_id = $('.gender input[name="sex"]:checked').val();
   addAlcohol();
 });

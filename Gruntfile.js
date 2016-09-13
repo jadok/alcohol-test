@@ -38,6 +38,6 @@ module.exports = function(grunt) {
 
   //grunt.registerTask('js-compile', ['jshint']);
   grunt.registerTask('css-compile', ['sass', 'csslint']);
-  grunt.registerTask('livraison', ['sass']);
+    grunt.registerTask('delivery', ['sass', 'postcss']);
   grunt.registerTask('default', ['sass', 'watch', 'postcss']);
 };

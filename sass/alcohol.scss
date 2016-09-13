@@ -10,16 +10,32 @@
   background-color: #551111;
   margin: 1em 0;
   transition: .2s all;
+  & > div {
+    margin: .5em 0;
+  }
+  & > span {
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  }
 }
 
 .alco-control {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
   margin: .5em 0;
+  & > div {
+    margin: .3em 0;
+    display: flex;
+    justify-content: space-between;
+    &:first {
+      justify-content: flex-end;
+    }
+  } 
 }
 
 .add-alco {
+  font-size: 2em;
   input {
     @include make-btn($main_color, $second_color, $third_color, $fourth_color);
   }
@@ -28,11 +44,20 @@
 .degree,
 .quantity {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 @include max-tablet {
   .alcohol {
     flex-direction: column;
     justify-content: center;
+  }
+  .alco-limit {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; 
+  }
+  .add-alco {
+    display: flex;
+    justify-content: flex-end;
   }
 }

@@ -2,10 +2,12 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: .5em 0;
-}
 
-.gender-woman,
-.gender-man {
-  margin: .2em 1em;
+  margin: .5em auto;
+  select {
+    max-width: 320px;
+    width: 100%;
+    background: white;
+    color: black;
+  }
 }

@@ -1,6 +1,7 @@
 html, body {
   background: #505050;
   color: white;
+  font-size:14px; 
 }
 .contain {
   width: 40%;
@@ -10,9 +11,15 @@ html, body {
 input {
   color: black;
   text-align: right;
-}
+  &[type="number"] {
+    max-width: 40%;
+  }
+} 
 
 @include max-tablet {
+  html, body {
+    font-size:18px;
+  }
   .contain {
     width: 95%;
   }
