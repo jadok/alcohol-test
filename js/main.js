@@ -55,7 +55,7 @@ function fillAlcohol() {
 }
 
 function alcohol() {
-  gender_id = $('select option:selected').val() === "Women" ? 1 : 0;
+  gender_id = parseInt($('select option:selected').val());
   var coef_g = gender_coef[gender_id];
   var conso = 0;
   $.each(alco, function (i, e) {
@@ -74,5 +74,6 @@ function limitAlco() {
 }
 $(document).ready(function ($) {
   $('#weight').val(weight);
+  $('.gender select').on('change', fillAlcohol);
   addAlcohol();
 });
